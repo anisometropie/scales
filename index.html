@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport", charset="UTF-8", width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+        <title>nouvelle page</title>
+        <link rel="stylesheet" href="index.css" />
+
+        <script src="libraries/p5.min.js"></script>
+        <script src="libraries/addons/p5.dom.min.js"></script>
+        <script src="libraries/addons/p5.sound.min.js"></script>
+        <script src="sketch.js"></script>
+        <script src="scale.js"></script>
+        <script src="component.js"></script>
+        <script src="note.js"></script>
+        <script src="button.js"></script>
+    </head>
+    <body>
+		<div id="canvasDiv"></div>
+        <div id="toolsDiv">
+            <div id="scaleSelection">
+                <div id="scaleName">
+                    <input id="scaleTextInput" type="text" value="C" onClick="this.select();"></input>
+                    <div id="alterationButtons">
+                        <button id="flatButton" onclick="setFlat()">&#x266d;</button>
+                        <button id="naturalButton" onclick="setNatural()">&#x266e;</button>
+                        <button id="sharpButton" onclick="setSharp()">&#x266f;</button>
+                    </div>
+                </div>
+                <input id="scaleSlider" type="range" min="0" max="6" value="0" class="slider" oninput="setScaleName()">
+                <select id="majorMinorSelect">
+                    <option value="major" selected>Major</option>
+                    <option value="harmonicMinor">Harmonic minor</option>
+                    <option value="ascendingMelodicMinor">Ascending melodic minor</option>
+                    <option value="descendingMelodicMinor">Descending melodic minor</option>
+                    <option value="mode">Mode</option>
+                </select>
+            </div>
+            <button onclick="createScale()">Add scale</button>
+            <button onclick="removeAllScales()">remove all scales</button>
+            <button onclick="toggleLanguage()">Language</button>
+        </div>
+	</body>
+</html>
