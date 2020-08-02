@@ -1,3 +1,5 @@
+import Component from './component'
+
 class Note extends Component {
   constructor(aName, aGridX, aGridY, aIsTonic, aFrequency) {
     super(aGridX, aGridY)
@@ -70,7 +72,7 @@ function testNoteforRegex(aNote, aRegex) {
 // (C, 3, 4) => E      (E a third above C, major third = 4 semitones))
 // (C, 3, 3) => E flat (E flat a third above C, minor third = 3 semitones))
 // (C, 1, 0) => C      (C, unison, 0 semitones)
-function findNoteFromInterval(aNote, aInterval, aSemitone) {
+export function findNoteFromInterval(aNote, aInterval, aSemitone) {
   let l_offset = 0
   if (aNote.includes(SHARP)) {
     l_offset = 1

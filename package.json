@@ -1,0 +1,55 @@
+{
+  "name": "alterations",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:anisometropie/scales.git",
+  "author": "Valentin Chanas <valentin.chanas@dcbrain.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.11.0",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
+    "@babel/preset-env": "^7.11.0",
+    "babel-jest": "^26.2.2",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.2.2",
+    "webpack": "^4.44.1"
+  },
+  "babel": {
+    "plugins": [
+      [
+        "module-resolver",
+        {
+          "root": [
+            "./src"
+          ]
+        }
+      ],
+      "@babel/plugin-proposal-class-properties"
+    ],
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ],
+    "env": {
+      "test": {
+        "plugins": [
+          "@babel/plugin-transform-modules-commonjs"
+        ]
+      }
+    }
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
+  }
+}
